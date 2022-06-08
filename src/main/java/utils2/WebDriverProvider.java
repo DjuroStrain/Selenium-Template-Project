@@ -34,6 +34,7 @@ public class WebDriverProvider extends TestWatcher {
         return driver != null;
     }
 
+    /*
     @Override
     protected void starting(final Description description) {
         String methodName = description.getClassName() + "." + description.getMethodName();
@@ -45,5 +46,6 @@ public class WebDriverProvider extends TestWatcher {
         if (this.driver != null) {
             this.driver.quit();
         }
-    }
+    }*/
+
 }
