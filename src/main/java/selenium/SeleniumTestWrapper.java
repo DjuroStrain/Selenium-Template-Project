@@ -1,13 +1,8 @@
 package selenium;
 
-import configurations.TestConfig;
-import org.junit.After;
+import selenium.configurations.TestConfig;
 import org.junit.Before;
 import org.junit.Rule;
-import org.junit.rules.TestRule;
-import org.junit.rules.TestWatcher;
-import org.junit.runner.Description;
-import org.junit.runners.model.Statement;
 import org.openqa.selenium.WebDriver;
 import selenium.driver.WebDriverConfig;
 import utils2.ScreenshotClass;
@@ -21,9 +16,7 @@ import utils2.annotations.browser.Browsers;
 
 import static org.junit.Assume.assumeFalse;
 import static org.junit.Assume.assumeTrue;
-
-
-public abstract class SeleniumTestWrapper {
+public abstract class SeleniumTestWrapper{
 
 	// Config
 	protected static final TestConfig testConfig = new TestConfig();
@@ -32,22 +25,28 @@ public abstract class SeleniumTestWrapper {
 
 	private ScreenshotClass screenshotClass = new ScreenshotClass(getDriver());
 
-	@Rule
+	/*@Rule
 	public TestRule testRule = new TestWatcher() {
+
 		@Override
+		public void testFailed(ExtensionContext context, Throwable cause) {
+			screenshotClass.takeScreenShotWhenTestFails();
+		}
+
+		/*@Override
 		public Statement apply(Statement base, Description description) {
 			return super.apply(base, description);
 		}
 
 		@Override
-		protected void failed(Throwable e, Description description) {
+		protected void testFailed(ExtensionContext context, Throwable cause) {
 			screenshotClass.takeScreenShotWhenTestFails();
 		}
 
 		@Override
 		protected void starting(final Description description) {
-			/*String methodName = description.getClassName() + "." + description.getMethodName();
-			this.webDriverBuilder.setName(methodName);*/
+			//String methodName = description.getClassName() + "." + description.getMethodName();
+			//this.webDriverBuilder.setName(methodName);
 			super.starting(description);
 		}
 
@@ -57,8 +56,10 @@ public abstract class SeleniumTestWrapper {
 			if (getDriver() != null) {
 				screenshotClass.quit();
 			}
-		}
-	};
+		}*/
+	//};
+
+
 
 	@Rule
 	public RepeatRule repeatRule = new RepeatRule();

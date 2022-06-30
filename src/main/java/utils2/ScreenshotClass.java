@@ -30,8 +30,10 @@ public class ScreenshotClass {
         boolean zatvoriPreglednik = new TypedProperties("/driver_config.properties").getBoolean("close_browser_on_test_end");
 
         if(zatvoriPreglednik){
+            System.out.println("Uslo IF");
             driver.quit();
         }else {
+            System.out.println("Uslo ELSE");
             chromedriverKiller();
         }
     }

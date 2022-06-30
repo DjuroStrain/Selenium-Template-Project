@@ -1,4 +1,4 @@
-package configurations;
+package selenium.configurations;
 
 import selenium.configurations.TypedProperties;
 
